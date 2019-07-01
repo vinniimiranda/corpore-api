@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node ace test"
+    "test": "node ace test",
+    "migrate": "adonis migration:run && adonis seed",
+    "migrate:reset": "adonis migration:reset"
   },
   "keywords": [
     "adonisjs",

@@ -2,6 +2,7 @@
 
 const Hash = use("Hash");
 const Model = use("Model");
+const Student = use('App/Models/Student')
 
 class User extends Model {
   static boot() {
@@ -15,7 +16,8 @@ class User extends Model {
       if (userInstance.dirty.password) {
         userInstance.password = await Hash.make(userInstance.password);
       }
-    });
+    });   
+    
   }
 
   /**

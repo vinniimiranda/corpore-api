@@ -7,6 +7,9 @@ class Company extends Model {
     user() {
         return this.hasMany('App/Models/User')
     }
+    students() {
+        return this.hasMany('App/Models/Student')
+    }
 
 }
 

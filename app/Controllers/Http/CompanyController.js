@@ -15,7 +15,7 @@ class CompanyController {
    * GET companies
    */
   async index () {
-    return await Company.query().with('user').fetch();
+    return await Company.query().setHidden(['created_at', 'updated_at']).with('user').fetch();
   }
 
   /**

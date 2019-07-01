@@ -4,9 +4,9 @@ const User = use("App/Models/User");
 
 class AuthController {
   async register({ request }) {
-    const data = request.only(["username", "email", "password", "company_id"]);
+    const data = request.all();
 
-    const user = await User.create(data);
+    const user = await User.create({...data});
 
     return user;
   }
@@ -20,7 +20,7 @@ class AuthController {
   }
 
   async get() {
-    return User.query().with('company').fetch()
+    return User.query().setHidden(['password', 'created_at', 'updated_at']).fetch()
   }
 }
 

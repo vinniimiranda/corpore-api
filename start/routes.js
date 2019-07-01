@@ -24,5 +24,6 @@ Route.group(() => {
     Route.resource('companies', 'CompanyController').apiOnly()
     Route.resource('customers', 'CustomerController').apiOnly()
     Route.resource('invoices', 'InvoiceController').apiOnly()
+    Route.resource('students', 'StudentController').apiOnly()
 })
 // .middleware(["auth"]);
